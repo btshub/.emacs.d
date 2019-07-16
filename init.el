@@ -1,70 +1,61 @@
+;;>>>>>>>>>>>>>>>> 模块化框架 <<<<<<<<<<<<<<<<<<<<<<<<
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
+;;├── init.el                        插件源及模块化接口
+;;└── lisp
+;;    ├── init-better-defaults.el    
+;;    ├── init-helper.el
+;;    ├── init-keybindings.el        快捷键设置
+;;    ├── init-packages.el           插件/功能管理
+;;    ├── init-appearance.el         界面及外观设置
+;;    ├── init-org.el
+;;    └── init-custom.el             用户配置文件，自动生成
 
 ;; 设置插件源(清华tuna大学源)
 ;;(when (>= emacs-version 24)
+(provide 'init-packages)
 (require 'package)
 (package-initialize)
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
-;; 快速打开配置文件
-(defun open-init-file()
-  (interactive)
-  (find-file "~/.emacs.d/init.el"))
+;;(setq package-enable-at-startup nil)
+(defvar init-el-package-archives-refreshed nil)
+(defun init-el-install-package (package-name)
+  (unless (package-installed-p package-name)
+    (unless init-el-package-archives-refreshed
+      (package-refresh-contents)
+      (setq init-el-package-archives-refreshed t))
+    (package-install package-name)))
+(defmacro init-el-with-eval-after-load (feature &rest body)
+  (declare (indent 1) (debug t))
+  (require feature)
+  `(with-eval-after-load ',feature ,@body))
+(defmacro init-el-require-package (package-name &optional feature-name)
+  (init-el-install-package package-name)
+  (require (or feature-name package-name))
+  `(init-el-install-package ',package-name))
 
-;; 将函数 open-init-file 绑定到 <f2> 键上
-(global-set-key (kbd "<f2>") 'open-init-file)
+;;模块化配置文件入口
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
-;; 关闭工具栏，tool-bar-mode 即为一个 Minor Mode
-(tool-bar-mode -1)
+;;快捷键设置
+(require 'init-keybindings)
 
-;; 关闭文件滑动控件
-(scroll-bar-mode -1)
+;;插件管理文件
+(require 'init-packages)
 
-;; 显示行号
-(global-linum-mode 1)
+;;界面及外观设置
+(require 'init-appearance)
 
-;;高亮当前行
-(global-hl-line-mode 1)
+;;用户配置文件，自动生成
+(require 'init-custom)
 
-;;将删除功能配置当你选中一段文字之后输入一个字符会替换掉你选中部分的文字。
-(delete-selection-mode 1)
-
-;; 更改显示字体大小 10pt
-;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
-(set-face-attribute 'default nil :height 100)
-
-;; 关闭启动帮助画面
-(setq inhibit-splash-screen 1)
-
-;;加入最近打开过文件的选项让我们更快捷的在图形界面的菜单中打开最近编辑过的文件。
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-item 10)
-
-;; 更改光标的样式（不能生效，解决方案见第二集）
-(setq-default cursor-type 'bar)
-
- ;; cl - Common Lisp Extension
-(require 'cl)
- ;; 自动安装插件列表
-
-; 开启全局 Company 补全
-(global-company-mode 1)
-
-;;使其每次打开编辑器时加载主题
-(load-theme 'monokai 1)
-
-;; >>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<<<
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (go-mode company))))
+ '(package-selected-packages (quote (company go-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
