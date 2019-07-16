@@ -1,32 +1,25 @@
 (provide 'init-packages)
 (require 'cl)
 ;; Add Packages
-(defvar melpa-include-packages
-  '(
-    atom-one-dark-theme
-    company
-    markdown-mode
-       ) "Default packages")
-(setq package-selected-packages melpa-include-packages)
+(defvar init-el-package-archives-refreshed nil)
+(defun init-el-install-package (package-name)
+  (unless (package-installed-p package-name)
+    (unless init-el-package-archives-refreshed
+      (package-refresh-contents)
+      (setq init-el-package-archives-refreshed t))
+    (package-install package-name)))
+(defmacro init-el-require-package (package-name)
+  (init-el-install-package package-name)
+  (require package-name)
+  `(init-el-install-package ',package-name)))
 
-(defun melpa-installed-packages ()
-  (loop for pkg in melpa-include-packages
-        when (not (package-installed-p pkg)) do (return nil)
-        finally (return t)))
-
-(unless (melpa-installed-packages)
-  (message "%s" "Refreshing package database...")
-  (package-refresh-contents)
-  (dolist (pkg melpa-include-packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
 ;; cl - Common Lisp Extension
 
 (setq auto-mode-alist
       (append
        '(("\\.go\\'" . go-mode))
        auto-mode-alist))
-
+(init-el-require-package company)
 ;;(require 'cl)
 ;; 自动安装插件列表
 ;;; company

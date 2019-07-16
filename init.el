@@ -54,7 +54,11 @@
      ("#F309DF" . 85)
      ("#3C3D37" . 100))))
  '(magit-diff-use-overlays nil)
- '(package-selected-packages (quote ((\, package-name) go-mode monokai-theme company)))
+ '(package-selected-packages
+   (quote
+    (company-go markdown-mode elisp--witness--lisp
+		(\, package-name)
+		go-mode monokai-theme company)))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)
