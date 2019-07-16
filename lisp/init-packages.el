@@ -3,7 +3,6 @@
 ;; Add Packages
 (defvar init-included-packages
   '(
-    atom-one-dark-theme
     company
     markdown-mode
        ) "Default packages")
