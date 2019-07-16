@@ -8,7 +8,7 @@
 (tool-bar-mode -1)
 
 ;; 关闭文件滑动控件
-(scroll-bar-mode -1)
+;;(scroll-bar-mode -1)
 
 ;; 显示行号
 (global-linum-mode 1)
@@ -33,7 +33,7 @@
 
 ;; 更改光标的样式（不能生效，解决方案见第二集）
 (setq-default cursor-type 'bar)
-
+(blink-cursor-mode -1)
 ;;使其每次打开编辑器时加载主题
 (load-theme 'monokai 1)
 
