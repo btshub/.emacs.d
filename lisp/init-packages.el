@@ -14,14 +14,7 @@
   (require package-name)
   `(init-install-package ',package-name))
 
-;; company自动补全
-(init-require-package company)
-(require 'company)
-; 开启全局 Company 补全
-(global-company-mode 1)
-
-;; golang模式
-(init-require-package go-mode)
+;; 匹配模式
 (setq auto-mode-alist
       (append
        '(
@@ -31,3 +24,11 @@
 ;;	 ("\\.md\\'" . markdown-mode)
 	 )
        auto-mode-alist))
+;; company自动补全
+(init-require-package company)
+(require 'company)
+(global-company-mode 1)
+
+;; golang模式
+(init-require-package go-mode)
+
