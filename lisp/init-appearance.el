@@ -36,3 +36,10 @@
 
 ;;使其每次打开编辑器时加载主题
 (load-theme 'monokai 1)
+
+;;; Use fucking UTF-8
+;;(prefer-coding-system 'utf-8)
+;;(set-language-environment "UTF-8")
+;;(setq locale-coding-system 'utf-8)
+;;(set-selection-coding-system 'utf-8)
+;;(setq-default buffer-file-coding-system 'utf-8-unix)

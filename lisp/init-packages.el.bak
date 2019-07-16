@@ -1,23 +1,23 @@
 (provide 'init-packages)
 (require 'cl)
 ;; Add Packages
-(defvar init-included-packages
+(defvar melpa-include-packages
   '(
     atom-one-dark-theme
     company
     markdown-mode
        ) "Default packages")
-(setq package-selected-packages init-included-packages)
+(setq package-selected-packages melpa-include-packages)
 
-(defun init-installed-packages ()
-  (loop for pkg in init-included-packages
+(defun melpa-installed-packages ()
+  (loop for pkg in melpa-include-packages
         when (not (package-installed-p pkg)) do (return nil)
         finally (return t)))
 
-(unless (init-installed-packages)
+(unless (melpa-installed-packages)
   (message "%s" "Refreshing package database...")
   (package-refresh-contents)
-  (dolist (pkg init-included-packages)
+  (dolist (pkg melpa-include-packages)
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 ;; cl - Common Lisp Extension
@@ -33,3 +33,4 @@
 (require 'company)
 ; 开启全局 Company 补全
 (global-company-mode 1)
+
