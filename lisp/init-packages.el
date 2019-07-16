@@ -24,6 +24,9 @@
 ;;	 ("\\.md\\'" . markdown-mode)
 	 )
        auto-mode-alist))
+
+;; monokai-theme
+(init-require-package monokai-theme)
 ;; company自动补全
 (init-require-package company)
 (require 'company)
@@ -31,4 +34,3 @@
 
 ;; golang模式
 (init-require-package go-mode)
-
