@@ -12,9 +12,9 @@
 
 ;; 显示行号
 (global-linum-mode 1)
-
+(setq linum-format "%3d > ")
 ;;高亮当前行
-(global-hl-line-mode 1)
+;;(global-hl-line-mode 1)
 
 ;;将删除功能配置当你选中一段文字之后输入一个字符会替换掉你选中部分的文字。
 (delete-selection-mode 1)
@@ -33,9 +33,16 @@
 
 ;; 更改光标的样式（不能生效，解决方案见第二集）
 (setq-default cursor-type 'bar)
-(blink-cursor-mode -1)
+(blink-cursor-mode 1)
 ;;使其每次打开编辑器时加载主题
 (load-theme 'monokai 1)
+
+(custom-set-faces
+ '(company-scrollbar-bg ((t (:background "white"))))
+ '(company-scrollbar-fg ((t (:background "green"))))
+ '(company-tooltip ((t (:foreground "cyan"))))
+ '(company-tooltip-common ((t (:foreground "magenta"))))
+ '(company-tooltip-selection ((t (:background "blue")))))
 
 ;;; Use fucking UTF-8
 ;;(prefer-coding-system 'utf-8)
