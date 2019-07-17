@@ -34,6 +34,7 @@
 ;; 更改光标的样式
 
 (setq-default cursor-type 'hbar)
+(setq-default visible-cursor nil)
 ;; 关闭光标闪烁(仅GUI模式生效)，文本模式取决于控制台设置
 (blink-cursor-mode -1)
 ;;使其每次打开编辑器时加载主题
