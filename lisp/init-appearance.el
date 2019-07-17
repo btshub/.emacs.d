@@ -44,7 +44,7 @@
  '(company-scrollbar-fg ((t (:background "white"))))
  '(company-tooltip ((t (:background "cyan" :foreground "blue"))))
  '(company-tooltip-common ((t (:foreground "magenta"))))
- '(company-tooltip-selection ((t (:background "yellow"))))
+ '(company-tooltip-selection ((t (:background "yellow")))))
 
 ;;; Use fucking UTF-8
 ;;(prefer-coding-system 'utf-8)
