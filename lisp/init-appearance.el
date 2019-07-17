@@ -6,7 +6,9 @@
 
 ;; 关闭工具栏，tool-bar-mode 即为一个 Minor Mode
 (tool-bar-mode -1)
-
+(menu-bar-mode -1)
+(setq display-time-mode 1)
+(setq display-time-day-and-date t)
 ;; 关闭文件滑动控件
 ;;(scroll-bar-mode -1)
 
@@ -26,6 +28,9 @@
 ;;自动括号匹配
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
+;; 简化烦人的yes or no
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;;加入最近打开过文件的选项。
 (require 'recentf)
 (recentf-mode 1)
@@ -39,7 +44,7 @@
 (blink-cursor-mode -1)
 ;;使其每次打开编辑器时加载主题
 (load-theme 'monokai 1)
-;;company补全提示框颜色设置
+;;company补全提示框颜色设置，GUI可注释本项
 (custom-set-faces
  '(company-scrollbar-bg ((t (:background "cyan"))))
  '(company-scrollbar-fg ((t (:background "white"))))
