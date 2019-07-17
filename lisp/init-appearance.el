@@ -38,13 +38,13 @@
 (blink-cursor-mode -1)
 ;;使其每次打开编辑器时加载主题
 (load-theme 'monokai 1)
-
+;;company补全提示框颜色设置
 (custom-set-faces
- '(company-scrollbar-bg ((t (:background "white"))))
- '(company-scrollbar-fg ((t (:background "magenta"))))
+ '(company-scrollbar-bg ((t (:background "cyan"))))
+ '(company-scrollbar-fg ((t (:background "white"))))
  '(company-tooltip ((t (:background "cyan" :foreground "blue"))))
- '(company-tooltip-common ((t (:foreground "red"))))
- '(company-tooltip-selection ((t (:background "yellow")))))
+ '(company-tooltip-common ((t (:foreground "magenta"))))
+ '(company-tooltip-selection ((t (:background "yellow"))))
 
 ;;; Use fucking UTF-8
 ;;(prefer-coding-system 'utf-8)
