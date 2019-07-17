@@ -32,8 +32,9 @@
 (setq recentf-max-menu-item 10)
 
 ;; 更改光标的样式（不能生效，解决方案见第二集）
-(setq-default cursor-type 'bar)
-(blink-cursor-mode 1)
+(setq-default cursor-type 'hbar)
+;; 关闭光标闪烁(仅GUI模式生效)，文本模式取决于控制台设置
+(blink-cursor-mode -1)
 ;;使其每次打开编辑器时加载主题
 (load-theme 'monokai 1)
 

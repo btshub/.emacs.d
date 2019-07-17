@@ -12,3 +12,8 @@
   (interactive)
   (find-file "~/.emacs.d/lisp/init-packages.el"))
 (global-set-key (kbd "<f3>") 'open-init-packages-file)
+
+(defun open-init-appearance-file()
+  (interactive)
+  (find-file "~/.emacs.d/lisp/init-appearance.el"))
+(global-set-key (kbd "<f4>") 'open-init-appearance-file)
