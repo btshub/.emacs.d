@@ -10,7 +10,7 @@
 (setq display-time-mode t)
 (setq display-time-day-and-date t)
 ;; 关闭文件滑动控件
-(scroll-bar-mode nil)
+;;(scroll-bar-mode 0)
 
 ;; 显示行号
 (global-linum-mode 1)
