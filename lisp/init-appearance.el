@@ -26,12 +26,13 @@
 ;;自动括号匹配
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
-;;加入最近打开过文件的选项让我们更快捷的在图形界面的菜单中打开最近编辑过的文件。
+;;加入最近打开过文件的选项。
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-item 10)
 
-;; 更改光标的样式（不能生效，解决方案见第二集）
+;; 更改光标的样式
+
 (setq-default cursor-type 'hbar)
 ;; 关闭光标闪烁(仅GUI模式生效)，文本模式取决于控制台设置
 (blink-cursor-mode -1)
@@ -40,10 +41,10 @@
 
 (custom-set-faces
  '(company-scrollbar-bg ((t (:background "white"))))
- '(company-scrollbar-fg ((t (:background "green"))))
- '(company-tooltip ((t (:foreground "cyan"))))
- '(company-tooltip-common ((t (:foreground "magenta"))))
- '(company-tooltip-selection ((t (:background "blue")))))
+ '(company-scrollbar-fg ((t (:background "magenta"))))
+ '(company-tooltip ((t (:foreground "cyan") :foreground "blue")))
+ '(company-tooltip-common ((t (:foreground "red"))))
+ '(company-tooltip-selection ((t (:background "yellow")))))
 
 ;;; Use fucking UTF-8
 ;;(prefer-coding-system 'utf-8)
