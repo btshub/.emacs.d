@@ -42,7 +42,7 @@
 (custom-set-faces
  '(company-scrollbar-bg ((t (:background "white"))))
  '(company-scrollbar-fg ((t (:background "magenta"))))
- '(company-tooltip ((t (:background "cyan") :foreground "blue")))
+ '(company-tooltip ((t (:background "cyan" :foreground "blue"))))
  '(company-tooltip-common ((t (:foreground "red"))))
  '(company-tooltip-selection ((t (:background "yellow")))))
 
