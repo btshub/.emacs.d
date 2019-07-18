@@ -1,4 +1,3 @@
-(provide 'init-packages)
 ;; 设置校验&安装确实插件
 (package-initialize)
 (setq package-enable-at-startup nil)
@@ -41,3 +40,5 @@
 (add-hook 'go-mode-hook (lambda ()
 			  (set (make-local-variable 'company-backends) '(company-go))
 			  (company-mode)))
+;; 文件末尾
+(provide 'init-packages)

@@ -1,6 +1,3 @@
-;;外观及界面设置
-(provide 'init-appearance)
-
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
 
@@ -57,4 +54,7 @@
 ;;(set-language-environment "UTF-8")
 ;;(setq locale-coding-system 'utf-8)
 ;;(set-selection-coding-system 'utf-8)
-;;(setq-default buffer-file-coding-system 'utf-8-unix)
+;;(setq-default buffer-file-coding-system 'utf-8-unix
+
+;;外观及界面设置
+(provide 'init-appearance)
