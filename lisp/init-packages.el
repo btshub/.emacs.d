@@ -34,11 +34,19 @@
       company-tooltip-idle-delay 0.3)
 
 ;; golang模式
-(init-require-package go-mode)
+;;(init-require-package go-mode)
 ;; company-go需要安装gocode，详见https://github.com/nsf/gocode
-(init-require-package company-go)
-(add-hook 'go-mode-hook (lambda ()
-			  (set (make-local-variable 'company-backends) '(company-go))
-			  (company-mode)))
+;;(init-require-package company-go)
+;;(add-hook 'go-mode-hook (lambda ()
+;;			  (set (make-local-variable 'company-backends) '(company-go))
+;;			  (company-mode)))
+(init-require-package company-lsp)
+(require 'company-lsp)
+(push 'company-lsp company-backends)
+(init-require-package lsp-mode)
+(require 'lsp-mode)
+(add-hook 'prog-mode-hook #'lsp)
+
 ;; 文件末尾
 (provide 'init-packages)
+

@@ -19,7 +19,6 @@
 
 ;;模块化配置文件入口
 (add-to-list 'load-path "~/.emacs.d/lisp")
-
 ;;快捷键设置
 (require 'init-shortkey)
 
