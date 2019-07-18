@@ -36,3 +36,8 @@
 
 ;; golang模式
 (init-require-package go-mode)
+;; company-go需要安装gocode，详见https://github.com/nsf/gocode
+(init-require-package company-go)
+(add-hook 'go-mode-hook (lambda ()
+			  (set (make-local-variable 'company-backends) '(company-go))
+			  (company-mode)))
