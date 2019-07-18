@@ -31,8 +31,8 @@
 (init-require-package company)
 (require 'company)
 (global-company-mode 1)
-(setq company-minimum-prefix-length 2
-      company-tooltip-idle-delay 0.36)
+(setq company-minimum-prefix-length 1
+      company-tooltip-idle-delay 0.3)
 
 ;; golang模式
 (init-require-package go-mode)
