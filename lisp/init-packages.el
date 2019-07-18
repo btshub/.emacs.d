@@ -40,6 +40,8 @@
 ;;(add-hook 'go-mode-hook (lambda ()
 ;;			  (set (make-local-variable 'company-backends) '(company-go))
 ;;			  (company-mode)))
+(init-require-package exec-path-from-shell)
+(exec-path-from-shell-initialize)
 (init-require-package company-lsp)
 (require 'company-lsp)
 (push 'company-lsp company-backends)
