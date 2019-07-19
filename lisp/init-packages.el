@@ -26,7 +26,7 @@
 
 ;; monokai-theme
 (init-require-package monokai-theme)
-;; company自动补全
+;; company全局自动补全
 (init-require-package company)
 (require 'company)
 (global-company-mode 1)
@@ -35,6 +35,19 @@
 
 ;; golang模式
 (init-require-package go-mode)
+;; 使用lsp，添加company-backends后端 
+(init-require-package lsp-mode)
+(require 'lsp-mode)
+(add-hook 'prog-mode-hook #'lsp)
+(init-require-package company-lsp)
+(require 'company-lsp)
+(push 'company-lsp company-backends)
+;; lsp-mode默认需要，实现模版补全
+(init-require-package yasnippet)
+(require 'yasnippet)
+;;可设置禁用模版补全
+;;(setq lsp-enable-snippet nil)
+
 ;; company-go需要安装gocode，详见https://github.com/nsf/gocode
 ;;(init-require-package company-go)
 ;;(add-hook 'go-mode-hook (lambda ()
@@ -42,15 +55,5 @@
 ;;			  (company-mode)))
 ;;(init-require-package exec-path-from-shell)
 ;;(exec-path-from-shell-initialize)
-(init-require-package company-lsp)
-(require 'company-lsp)
-(push 'company-lsp company-backends)
-(init-require-package lsp-mode)
-(require 'lsp-mode)
-(add-hook 'prog-mode-hook #'lsp)
-;;(require 'yasnippet)
-(setq lsp-enable-snippet nil)
-
 ;; 文件末尾
 (provide 'init-packages)
-
