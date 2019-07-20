@@ -29,5 +29,5 @@
 (require 'init-appearance)
 
 ;;用户配置文件，自动生成
-(setq custom-file "./init-custom.el")
+(setq custom-file "~/.emacs.d/lisp/init-custom.el")
 (load custom-file)
