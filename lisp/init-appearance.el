@@ -4,8 +4,8 @@
 ;; 关闭工具栏，tool-bar-mode 即为一个 Minor Mode
 (tool-bar-mode 0)
 (menu-bar-mode 0)
-(setq display-time-mode t)
-(setq display-time-day-and-date t)
+(display-time-mode t)
+(display-battery-mode t)
 ;; 关闭文件滑动控件
 ;;(scroll-bar-mode 0)
 
