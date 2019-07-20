@@ -10,7 +10,7 @@
 ;;    ├── init-org.el
 ;;    └── init-custom.el             用户配置文件，自动生成
 
-;; 设置插件源(清华tuna大学源)
+;; 设置插件源(清华tuna源)
 ;;(when (>= emacs-version 24)
 (require 'package)
 (package-initialize)
@@ -29,3 +29,5 @@
 (require 'init-appearance)
 
 ;;用户配置文件，自动生成
+(setq custom-file "./init-custom.el")
+(load custom-file)
