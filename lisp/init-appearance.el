@@ -7,8 +7,7 @@
 (display-time-mode t)
 (display-battery-mode t)
 ;; 关闭文件滑动控件
-;;(scroll-bar-mode 0)
-
+(if (display-graphic-p) (scroll-bar-mode 0))
 ;; 显示行号
 (global-linum-mode 1)
 (setq linum-format "%3d > ")
