@@ -12,7 +12,7 @@
   (init-install-package package-name)
   (require package-name)
   `(init-install-package ',package-name))
-;;(setq package-selected-package package-name)
+
 ;; 匹配模式
 (setq auto-mode-alist
       (append
@@ -26,6 +26,7 @@
 
 ;; monokai-theme
 (init-require-package monokai-theme)
+(load-theme 'monokai 1)
 ;; company全局自动补全
 (init-require-package company)
 (require 'company)
