@@ -8,4 +8,4 @@ elpa
 recentf*
 url
 .lsp-session*
-lisp/init-custom.el
+lisp/*tom.el

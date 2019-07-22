@@ -8,7 +8,7 @@
 ;;    ├── init-packages.el           插件/功能管理
 ;;    ├── init-appearance.el         界面及外观设置
 ;;    ├── init-org.el
-;;    └── init-custom.el             用户配置文件，自动生成
+;;    └── init-autosaved.el          用户配置文件，自动生成
 
 ;;放在最前，避免GUI闪烁
 ;;(tool-bar-mode 0)
@@ -33,5 +33,5 @@
 (require 'init-packages)
 
 ;;用户配置文件，自动生成
-(setq custom-file "~/.emacs.d/lisp/init-custom.el")
+(setq custom-file "~/.emacs.d/lisp/init-autosaved.el")
 (load custom-file)
