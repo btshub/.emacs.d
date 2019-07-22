@@ -63,5 +63,9 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 (evil-mode 1)
+
+(init-require-package smartparens)
+(require 'smartparens-config)
+(smartparens-global-mode 1)
 ;; 文件末尾
 (provide 'init-packages)
