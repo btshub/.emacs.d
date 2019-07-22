@@ -7,7 +7,5 @@ auto-save-list
 elpa
 recentf*
 url
-.lsp-session-v1
 .lsp-session*
-*init-custom.el
 lisp/init-custom.el
