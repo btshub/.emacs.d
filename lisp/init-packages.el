@@ -55,5 +55,12 @@
 ;;			  (company-mode)))
 ;;(init-require-package exec-path-from-shell)
 ;;(exec-path-from-shell-initialize)
+
+(init-require-package evil)
+(require 'evil)
+(init-require-package undo-tree)
+(require 'undo-tree)
+(global-undo-tree-mode)
+(evil-mode 1)
 ;; 文件末尾
 (provide 'init-packages)
