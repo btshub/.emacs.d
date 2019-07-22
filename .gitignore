@@ -8,4 +8,4 @@ elpa
 recentf*
 url
 .lsp-session*
-init-autosaved.el
+lisp/init-autosaved.el
