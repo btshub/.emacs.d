@@ -8,8 +8,8 @@
 (display-battery-mode t)
 ;; 关闭文件滑动控件
 (if (display-graphic-p)
-    ((tool-bar-mode 0)
-     (scroll-bar-mode 0)))
+    ((scroll-bar-mode 0)
+     (tool-bar-mode 0)))
 ;; 显示行号
 (global-linum-mode 1)
 (setq linum-format "%3d > ")
@@ -41,7 +41,7 @@
 ;; 关闭光标闪烁(仅GUI模式生效)，文本模式取决于控制台设置
 (blink-cursor-mode -1)
 ;;使其每次打开编辑器时加载主题
-(load-theme 'monokai 1)
+;;(load-theme 'monokai 1)
 ;;company补全提示框颜色设置，GUI可注释本项
 (custom-set-faces
  '(company-scrollbar-bg ((t (:background "cyan"))))
