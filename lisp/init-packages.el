@@ -12,7 +12,7 @@
   (init-install-package package-name)
   (require package-name)
   `(init-install-package ',package-name))
-
+;;(setq package-selected-package package-name)
 ;; 匹配模式
 (setq auto-mode-alist
       (append

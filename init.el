@@ -13,8 +13,6 @@
 ;; 设置插件源(清华tuna源)
 ;;(when (>= emacs-version 24)
 ;;放在最前，避免GUI闪烁
-(menu-bar-mode 0)
-
 (require 'package)
 (package-initialize)
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
@@ -22,7 +20,8 @@
 
 ;;模块化配置文件入口
 (add-to-list 'load-path "~/.emacs.d/lisp")
-
+(menu-bar-mode 0)
+(tool-bar-mode 0)
 ;;界面及外观设置
 (require 'init-appearance)
 
@@ -34,4 +33,4 @@
 
 ;;用户配置文件，自动生成
 (setq custom-file "~/.emacs.d/lisp/init-custom.el")
-(load custom-file)
+;;(load custom-file)
