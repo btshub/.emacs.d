@@ -33,8 +33,9 @@
 (recentf-mode 1)
 (setq recentf-max-menu-item 10)
 
+;;关闭自动保存
+(setq auto-save-default nil)
 ;; 更改光标的样式
-
 (setq-default cursor-type 'hbar)
 (setq-default visible-cursor nil)
 ;; 关闭光标闪烁(仅GUI模式生效)，文本模式取决于控制台设置

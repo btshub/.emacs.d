@@ -63,9 +63,14 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 (evil-mode 1)
-
 (init-require-package smartparens)
 (require 'smartparens-config)
 (smartparens-global-mode 1)
+(init-require-package hungry-delete)
+(global-hungry-delete-mode)
+(init-require-package ivy)
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
 ;; 文件末尾
 (provide 'init-packages)

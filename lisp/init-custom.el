@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (smartparens yasnippet monokai-theme exec-path-from-shell evil company-lsp company-go))))
+    (elisp--witness--lisp smartparens yasnippet monokai-theme exec-path-from-shell evil company-lsp company-go))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
