@@ -27,6 +27,8 @@
 ;; monokai-theme
 (init-require-package monokai-theme)
 (load-theme 'monokai 1)
+;;(init-require-package solarized-theme)
+;;(load-theme 'solarized-dark t)
 ;; company全局自动补全
 (init-require-package company)
 (require 'company)
@@ -68,9 +70,9 @@
 (smartparens-global-mode 1)
 (init-require-package hungry-delete)
 (global-hungry-delete-mode)
-(init-require-package ivy)
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
+;;(init-require-package ivy)
+;;(ivy-mode 1)
+;;(setq ivy-use-virtual-buffers t)
+;;(setq enable-recursive-minibuffers t)
 ;; 文件末尾
 (provide 'init-packages)
